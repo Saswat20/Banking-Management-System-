@@ -1,0 +1,11 @@
+
+<html>
+<body>
+<h2>Bank Login</h2>
+<form action="login" method="post">
+Username: <input name="username"><br>
+Password: <input type="password" name="password"><br>
+<button type="submit">Login</button>
+</form>
+</body>
+</html>
