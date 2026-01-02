@@ -1,14 +1,16 @@
-
 package com.banking.config;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBConnection {
-    public static Connection getConnection() throws Exception {
+    private static final String URL = "jdbc:mysql://localhost:3306/banking_db";
+    private static final String USER = "root"; // Change to your DB username
+    private static final String PASS = "password"; // Change to your DB password
+
+    public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/banking_db",
-            "root",
-            ""
-        );
+        return DriverManager.getConnection(URL, USER, PASS);
     }
 }
